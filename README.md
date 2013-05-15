@@ -1,5 +1,4 @@
-Project Framework with Bootstrap
+CIS295 Social Network Project
 ================================
 
-This codebase is the base framework for your project with bootstrap
-already enabled.
+This is the final project for CIS295
