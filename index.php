@@ -13,6 +13,10 @@ switch ($_GET["q"]) {
         include( APP_CONTROLLER . "/homeController.php");
         break;
 
+    case "auth":
+        include( APP_CONTROLLER . "/authController.php");
+        break;
+
     default:
         include( APP_CONTROLLER . "/homeController.php");
         break;
