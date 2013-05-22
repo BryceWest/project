@@ -1,5 +1,6 @@
 <?php
 
+#processAuth
 function processAuth($user, $pass) {
 
     $userList = array();
@@ -33,3 +34,4 @@ function processAuth($user, $pass) {
 
     return($auth);
 }
+# -- End processAuth --

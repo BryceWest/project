@@ -1,7 +1,5 @@
 <?php
 
-// Include libraries
-include(APP_MODEL . "/auth/auth_lib.php");
 
 
 
@@ -14,6 +12,19 @@ switch ( $_GET["a"] ) {
         include( APP_VIEW . "/auth/loginView.php" );
         include(APP_VIEW . "/footer.php");
         break;
+    case "logout":
+
+        #Delete session data
+
+        $_SESSION = 0;
+        session_destroy();
+        session_start();
+
+        include(APP_VIEW . "/header.php");
+        include(APP_VIEW . "/nav.php");
+        include( APP_VIEW . "/auth/loginView.php" );
+        include(APP_VIEW . "/footer.php");
+        break;
 
     case "process":
 
@@ -21,6 +32,9 @@ switch ( $_GET["a"] ) {
         $auth = processAuth($_POST["username"], $_POST["password"]);
 
         if (true == $auth["return"]) {
+            #Setup session
+            $_SESSION["username"] = $_POST["username"];
+
             header("Location: http://localhost" . APP_DOC_ROOT);
         }
         else {
