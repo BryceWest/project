@@ -1,9 +1,5 @@
 <?php
 
-
-
-
-
 switch ( $_GET["a"] ) {
 
     case "login":
@@ -12,10 +8,9 @@ switch ( $_GET["a"] ) {
         include( APP_VIEW . "/auth/loginView.php" );
         include(APP_VIEW . "/footer.php");
         break;
+
     case "logout":
-
         #Delete session data
-
         $_SESSION = 0;
         session_destroy();
         session_start();
@@ -26,8 +21,8 @@ switch ( $_GET["a"] ) {
         include(APP_VIEW . "/footer.php");
         break;
 
-    case "process":
 
+    case "process":
 
         $auth = processAuth($_POST["username"], $_POST["password"]);
 
@@ -50,4 +45,3 @@ switch ( $_GET["a"] ) {
         break;
 
 }
-
