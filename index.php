@@ -6,6 +6,7 @@
 include("config/bootstrap.php");
 // Include libraries
 include(APP_MODEL . "/auth/auth_lib.php");
+include(APP_MODEL . "/prod/prod_lib.php");
 
 
 
@@ -29,6 +30,10 @@ switch ($_GET["q"]) {
 
     case "auth":
         include( APP_CONTROLLER . "/authController.php");
+        break;
+
+    case "prod":
+        include( APP_CONTROLLER . "/prodController.php");
         break;
 
     default:
