@@ -51,9 +51,9 @@ switch ( $_GET["a"] ) {
     case "insert":
 
         insert_product( $_POST );
-
+        $product = list_products();
         include( APP_VIEW ."/prod/prodSubNav.php" );
-        include( APP_VIEW ."/prod/insertView.php" );
+        include( APP_VIEW ."/prod/listView.php" );
         break;
 
     default:
