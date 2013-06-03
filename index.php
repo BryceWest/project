@@ -7,6 +7,7 @@ include("config/bootstrap.php");
 // Include libraries
 include(APP_MODEL . "/auth/auth_lib.php");
 include(APP_MODEL . "/prod/prod_lib.php");
+include(APP_MODEL . "/home/home_lib.php");
 
 
 
