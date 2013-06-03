@@ -24,6 +24,7 @@
 <?php
                   print (  empty($_SESSION["username"]) ?
                     '<li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?q=auth&a=login">Login</a></li>
+                     <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?q=auth&a=new">Sign Up</a></li>
                     '
                     : "");
 

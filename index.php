@@ -14,7 +14,7 @@ include(APP_MODEL . "/prod/prod_lib.php");
 session_start();
 
 #Check if user is authenticated
-if (!$_SESSION["username"] && $_GET["a"] != "process" && $_GET["q"] != "auth") {
+if (!$_SESSION["username"] && $_GET["a"] != "process" && $_GET["q"] != "auth" && $_GET["a"] != "new" && $_GET["a"] != "newPush") {
     $_GET["q"] = "auth";
     $_GET["a"] = "login";
 }
