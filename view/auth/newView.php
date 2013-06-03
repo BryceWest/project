@@ -23,6 +23,7 @@
 
                 <button class="btn btn-large btn-primary" type="submit">Sign up</button>
             </form>
+            <button class="btn"><a href="index.php?q=auth&a=login">Sign in</a></button>
         </div><!--/well-->
       </div><!--/span-->
       <!-- End page content -->
