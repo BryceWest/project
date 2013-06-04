@@ -18,6 +18,15 @@ switch ( $_GET["a"] ) {
         include( APP_VIEW ."/home/homeView.php" );
         break;
 
+    case "add":
+        add_comment($_POST);
+        $privacy = list_privacy();
+        $content = list_comment();
+
+        include( APP_VIEW ."/home/homeSubNav.php" );
+        include( APP_VIEW ."/home/homeView.php" );
+        break;
+
     default:
         $privacy = list_privacy();
         $content = list_comment();
