@@ -30,9 +30,16 @@ function list_comment() {
 
     $comment = array();
 
+    if ($_GET["p"] == 1 || $_GET["p"] == 2 || $_GET["p"] == 3 || $_GET["p"] == 4 || $_GET["p"] == 5) {
+        $privacy = $_GET["p"];
+    } else {
+        $privacy = 1;
+    }
+
+
     $sql = "SELECT a.username, p.comment_parent, p.user, p.privacy_list, p.content
             FROM  post p, auth_user a
-            WHERE  '" . $user_name . "' = a.username AND a.id = p.user";
+            WHERE  '" . $user_name . "' = a.username AND a.id = p.user AND '".$privacy."' = p.privacy_list";
 
 
     $res = mysql_query($sql);
