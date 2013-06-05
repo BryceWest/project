@@ -54,7 +54,7 @@ function list_comment() {
             SELECT a.username, p.comment_parent, p.user, p.privacy_list, p.content
             FROM  post p, auth_user a, friend f
             WHERE f.user_id IN ( SELECT friend_id FROM friend WHERE ".$user_id." = user_id AND '".$privacy."' = friend_privacy) AND
-            p.user = f.user_id AND a.id = f.user_id AND f.friend_privacy = p.privacy_list";
+            p.user = f.user_id AND a.id = f.user_id AND f.friend_privacy = p.privacy_list AND ".$user_id." = f.friend_id";
 
 
     $res = mysql_query($sql);

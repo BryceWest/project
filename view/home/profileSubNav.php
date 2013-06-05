@@ -1,7 +1,8 @@
 
       <!-- sub navigation -->
-      <div class="offset1 span2">
-        <div class="navbar">
+
+      <div class="span3">
+        <div class="navbar offset4">
      <div class="navbar-inner">
         <div class="nav-collapse collapse">
 
@@ -10,34 +11,34 @@
               <li id="fat-menu" class="dropdown">
                 <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
 <?php
-                                                                                                foreach ( $privacy as $key => $item ) {
-                                                                                                    switch ( $_GET["p"] ) {
+                    foreach ( $privacy as $key => $item ) {
+                        switch ( $_GET["p"] ) {
 
-                                                                                                          case "1":
-                                                                                                              print $item["privacy1"];
-                                                                                                              break;
+                              case "1":
+                                  print $item["privacy1"];
+                                  break;
 
-                                                                                                          case "2":
-                                                                                                              print $item["privacy2"];
-                                                                                                              break;
+                              case "2":
+                                  print $item["privacy2"];
+                                  break;
 
-                                                                                                          case "3":
-                                                                                                              print $item["privacy3"];
-                                                                                                              break;
+                              case "3":
+                                  print $item["privacy3"];
+                                  break;
 
-                                                                                                          case "4":
-                                                                                                              print $item["privacy4"];
-                                                                                                              break;
+                              case "4":
+                                  print $item["privacy4"];
+                                  break;
 
-                                                                                                          case "5":
-                                                                                                              print $item["privacy5"];
-                                                                                                              break;
+                              case "5":
+                                  print $item["privacy5"];
+                                  break;
 
-                                                                                                          default:
-                                                                                                              print $item["privacy1"];
-                                                                                                              break;
-                                                                                                      }
-                                                                                                }
+                              default:
+                                  print $item["privacy1"];
+                                  break;
+                          }
+                    }
 ?>
                   <b class="caret"></b>
                 </a>
