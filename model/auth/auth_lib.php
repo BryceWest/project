@@ -83,6 +83,32 @@ function newUser($email, $fName, $lName, $user, $user2, $pass, $pass2) {
                 )";
 
             mysql_query( $sql );
+
+
+    $sql = "SELECT id
+            FROM  auth_user
+            WHERE '" . $user . "' = username";
+    $res = mysql_query($sql);
+    $row = mysql_fetch_array( $res);
+    $user_id = $row["id"];
+
+
+
+
+        $sql = "INSERT INTO profile
+             ( user_id )
+            VALUES
+             (" . $user_id . ")";
+
+    //print $sql;
+
+    mysql_query( $sql );
+
+
+
+
+
+
     }
 
 
