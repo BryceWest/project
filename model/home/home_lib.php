@@ -34,6 +34,9 @@ function list_comment() {
     $user_name = $_SESSION["username"];
 
     $comment = array();
+    if ($_GET["p"] == 0) {
+        $_GET["p"] = 1;
+    }
     $privacy = $_GET["p"];
 
     $sql = "SELECT id
@@ -44,15 +47,15 @@ function list_comment() {
     $user_id = $row["id"];
 
     $sql = "SELECT a.username, p.comment_parent, p.user, p.privacy_list, p.content
+            FROM  post p, auth_user a
+            WHERE '" . $user_name . "' = a.username AND ".$user_id." = p.user AND '".$privacy."' = p.privacy_list
+
+            UNION
+            SELECT a.username, p.comment_parent, p.user, p.privacy_list, p.content
             FROM  post p, auth_user a, friend f
-            WHERE ('" . $user_name . "' = a.username AND ".$user_id." = p.user AND '".$privacy."' = p.privacy_list)";
-           // (".$user_id." = p.user AND ".$user_id." = f.friend_id AND p.privacy_list = f.friend_privacy AND '".$privacy."' = p.privacy_list) OR
+            WHERE f.user_id IN ( SELECT friend_id FROM friend WHERE ".$user_id." = user_id AND '".$privacy."' = friend_privacy) AND
+            p.user = f.user_id AND a.id = f.user_id AND f.friend_privacy = p.privacy_list";
 
-
-          //  "SELECT a.username, p.comment_parent, p.user, p.privacy_list, p.content
-          //   FROM post p, auth_user a, friend f
-          //   WHERE ('" . $user_name . "' = a.username AND a.id = p.user AND '".$privacy."' = p.privacy_list)
-          //   OR p.user IN (SELECT p.user FROM auth_user a, friend f WHERE user_followers.user_id = "
 
     $res = mysql_query($sql);
 
@@ -70,6 +73,9 @@ function add_comment($post) {
     $user_name = $_SESSION["username"];
 
     $comment = array();
+    if ($_GET["p"] == 0) {
+        $_GET["p"] = 1;
+    }
     $privacy = $_GET["p"];
     $sql = "SELECT id
             FROM  auth_user
