@@ -60,6 +60,9 @@ switch ( $_GET["a"] ) {
             #Setup session
             $_SESSION["username"] = $_POST["username"];
 
+
+
+
             header("Location: http://localhost" . APP_DOC_ROOT);
         }
         else {

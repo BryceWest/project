@@ -29,7 +29,7 @@
                     : "");
 
                   print (  !empty($_SESSION["username"]) ?
-                    '<li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?q=home&a=profile">Profile</a></li>
+                    '<li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?q=home&a=profile&id='. $_SESSION["id"].'">Profile</a></li>
                     <li role="presentation" class="divider"></li>
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?q=auth&a=logout">Logout</a></li>'
                     : "");

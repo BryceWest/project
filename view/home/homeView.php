@@ -7,7 +7,7 @@
                 <input type="text" name="content" class="input-block-level" placeholder="How is your day so far?<?php print $_GET["p"]; ?>">
                 <button class="btn btn-large btn-primary" type="submit">Post</button>
             </form>
-
+          <?php  print $_SESSION["id"]; ?>
             <table class="table">
                 <thead>
                     <td>Posts</td>

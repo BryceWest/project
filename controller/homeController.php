@@ -29,6 +29,31 @@ switch ( $_GET["a"] ) {
     case "profile":
         $privacy = list_privacy();
         $content = list_comment();
+        $about = list_about();
+        include( APP_VIEW ."/home/profileSubNav.php" );
+        include( APP_VIEW ."/home/profileView.php" );
+        break;
+
+    case "proEdit":
+        $privacy = list_privacy();
+        $content = list_comment();
+        $about = list_about();
+        include( APP_VIEW ."/home/proEditSubNav.php" );
+        include( APP_VIEW ."/home/profileView.php" );
+        break;
+
+    case "proPush":
+
+        $about = $_POST["about"];
+        $birth_day = $_POST["birth_day"];
+        $birth_year = $_POST["birth_year"];
+        $birth_month = $_POST["birth_month"];
+
+
+        update_about($about,$birth_day,$birth_year,$birth_month);
+        $privacy = list_privacy();
+        $content = list_comment();
+        $about = list_about();
         include( APP_VIEW ."/home/profileSubNav.php" );
         include( APP_VIEW ."/home/profileView.php" );
         break;

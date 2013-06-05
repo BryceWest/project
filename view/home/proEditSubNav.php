@@ -66,13 +66,17 @@
     </div><!--/.well -->
 
         <div class="well">
+          <form action="index.php?q=home&a=proPush" method="post">
             <dl>
                 <dt>About</dt>
-                <dd><?php print $about["about"]; ?></dd><br />
+                <dd><textarea name="about" cols="25" rows="5"><?php print $about["about"]; ?></textarea><br>
+                    </dd><br />
                 <dt>Birth day</dt>
-                <dd><?php print $about["birth_month"]."/".$about["birth_day"]."/".$about["birth_year"]; ?></dd>
+                <dd><input name="birth_month" type="text" value="<?php print $about["birth_month"] ?>">/<input type="text" name="birth_day" value="<?php print $about["birth_day"] ?>">/<input type="text"  name="birth_year" value="<?php print $about["birth_year"]; ?>"></dd>
             </dl>
-            <a class="btn" href="index.php?q=home&a=proEdit">Edit Info</a>
+            <button class="btn btn-large btn-primary" type="submit">Update</button>
+          </form>
+
         </div><!--/well-->
 
 
@@ -81,6 +85,3 @@
 
       </div><!--/span-->
       <!-- end sub navigation -->
-
-
-
