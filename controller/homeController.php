@@ -22,9 +22,15 @@ switch ( $_GET["a"] ) {
         add_comment($_POST);
         $privacy = list_privacy();
         $content = list_comment();
-
         include( APP_VIEW ."/home/homeSubNav.php" );
         include( APP_VIEW ."/home/homeView.php" );
+        break;
+
+    case "profile":
+        $privacy = list_privacy();
+        $content = list_comment();
+        include( APP_VIEW ."/home/profileSubNav.php" );
+        include( APP_VIEW ."/home/profileView.php" );
         break;
 
     default:
