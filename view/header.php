@@ -9,9 +9,7 @@
 
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
     <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
-    <script src="js/msdropdown/jquery-1.3.2.min.js" type="text/javascript"></script>
-    <script src="js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
+    <script type="text/javascript" src="<?php print APP_JSCRIPT . "/application.js"; ?>"></script>
     <title>My Project</title />
   </head>
   <body>

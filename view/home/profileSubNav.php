@@ -2,6 +2,7 @@
       <!-- sub navigation -->
 
       <div class="span3">
+
         <div class="navbar offset4">
      <div class="navbar-inner">
         <div class="nav-collapse collapse">

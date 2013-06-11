@@ -48,6 +48,92 @@ function list_about() {
     return($row);
 }
 
+function list_fabout() {
+
+
+    $user_name = $_GET["f"];
+
+    $sql = "SELECT id
+            FROM  auth_user
+            WHERE '" . $user_name . "' = username";
+    $res = mysql_query($sql);
+    $row = mysql_fetch_array( $res);
+    $user_id = $row["id"];
+
+    $sql = "SELECT a.id, pic.name, p.about, p.birth_day, p.birth_month, p.birth_year
+            FROM  profile p, auth_user a, pic pic
+            WHERE " . $user_id . " = p.user_id AND a.id = ".$user_id." AND a.picture = pic.id";
+    $res = mysql_query($sql);
+    $row = mysql_fetch_array( $res);
+
+
+    return($row);
+}
+
+function friend_check() {
+
+    $user_name = $_GET["f"];
+    $sql = "SELECT id
+            FROM  auth_user
+            WHERE '" . $user_name . "' = username";
+    $res = mysql_query($sql);
+    $row = mysql_fetch_array( $res);
+    $friend_id = $row["id"];
+
+    $user_name = $_SESSION["username"];
+    $sql = "SELECT id
+            FROM  auth_user
+            WHERE '" . $user_name . "' = username";
+    $res = mysql_query($sql);
+    $row = mysql_fetch_array( $res);
+    $user_id = $row["id"];
+
+    $sql = "SELECT friend_id
+            FROM   friend
+            WHERE  ".$user_id." = user_id AND ".$friend_id." = friend_id ";
+    $res = mysql_query($sql);
+    $row = mysql_fetch_array( $res);
+
+    if (!empty($row)) {
+        $message = "You are friends.";
+    } else {
+        $message = "You are not friends.";
+    }
+
+    return($message);
+}
+
+function addFriend($p) {
+
+
+    $user_name = $_GET["f"];
+    $sql = "SELECT id
+            FROM  auth_user
+            WHERE '" . $user_name . "' = username";
+    $res = mysql_query($sql);
+    $row = mysql_fetch_array( $res);
+    $friend_id = $row["id"];
+
+    $user_name = $_SESSION["username"];
+    $sql = "SELECT id
+            FROM  auth_user
+            WHERE '" . $user_name . "' = username";
+    $res = mysql_query($sql);
+    $row = mysql_fetch_array( $res);
+    $user_id = $row["id"];
+
+        $sql = "INSERT INTO friend
+             ( user_id, friend_id, friend_privacy )
+            VALUES
+             (  " . $user_id                   . ",
+               '" . $friend_id                 . "',
+               '" . $p                         . "')";
+
+    //print $sql;
+
+    mysql_query( $sql );
+}
+
 function list_picOptions() {
 
     $option = array();
@@ -181,7 +267,6 @@ function add_comment($post) {
 
     mysql_query( $sql );
 }
-
 
 
 ?>

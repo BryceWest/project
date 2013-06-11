@@ -34,7 +34,26 @@ switch ( $_GET["a"] ) {
         include( APP_VIEW ."/home/profileView.php" );
         break;
 
+    case "fprofile":
+        $privacy = list_privacy();
+        $f = $_GET["f"];
+        $message = friend_check();
+        $about = list_fabout();
+        include( APP_VIEW ."/home/fprofileSubNav.php" );
+        include( APP_VIEW ."/home/fprofileView.php" );
+        break;
+
+    case "addFriend":
+        $privacy = list_privacy();
+        addFriend($_POST["privacy"]);
+        $message = friend_check();
+        $about = list_fabout();
+        include( APP_VIEW ."/home/fprofileSubNav.php" );
+        include( APP_VIEW ."/home/fprofileView.php" );
+        break;
+
     case "proEdit":
+        $picOptions = list_picOptions();
         $privacy = list_privacy();
         $content = list_comment();
         $about = list_about();

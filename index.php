@@ -11,6 +11,7 @@ include(APP_MODEL . "/home/home_lib.php");
 
 
 
+
 # Start session
 session_start();
 
@@ -27,6 +28,10 @@ switch ($_GET["q"]) {
 
     case "home":
         include( APP_CONTROLLER . "/homeController.php");
+        break;
+
+    case "search":
+        include( APP_CONTROLLER . "/friendSearchController.php");
         break;
 
     case "auth":

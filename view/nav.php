@@ -40,21 +40,17 @@
             </ul>
 
 
-
-
-
-
-
-               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                 <li> Hello </li>
-               </ul>
            </div>
 
 
 
          <ul class="nav">
            <li><a href="index.php">Home</a></li>
-           <li><a href="index.php?q=prod">Products</a></li>
+           <li class="offset4" index="-1"> <form>
+                    Search for friends <input type="text" id="search" onkeyup="showHint(this.value)" />
+                </form>
+                <p><span id="friendDisplay"></span></p>
+           </li>
          </ul>
        </div><!--/.nav-collapse -->
     </div>
