@@ -11,6 +11,7 @@
 <?php
         foreach ( $content as $key => $item ) { ?>
                 <tr>
+                    <td class="span2"><img src="<?php print "pics/".$item["name"] ?>" /> </td>
                     <td class="span1"><?php print $item["username"]; ?></td>
                     <td><?php print $item["content"]; ?></td>
 

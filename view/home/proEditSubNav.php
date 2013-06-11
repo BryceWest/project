@@ -65,11 +65,29 @@
       </div>
     </div><!--/.well -->
 
+
+
         <div class="well">
           <form action="index.php?q=home&a=proPush" method="post">
             <dl>
+                <dt class="row"><img id="orig" class="span11 offset1" src="<?php print "pics/".$about["name"] ?>" /></dt><br />
+                <dt>Choose a new Profile image</dt><br />
+<?php
+        foreach ( $picOptions as $key => $item ) { ?>
+                      <img class="span3" onclick="javascript:document.getElementById('proPic').value='<?php print $key + 1; ?>'" src="<?php print "pics/".$item["name"] ?>" />
+                      <?php if (($key+1) % 3 == 0) { ?>
+                        <dt class="row"></dt><br />
+                      <?php } ?>
+
+
+
+<?php   }
+?>
+                <dt class="row"></dt><br />
+                <input name="proPic" id="proPic" type="text" />
+                   <!-- </select>-->
                 <dt>About</dt>
-                <dd><textarea name="about" cols="25" rows="5"><?php print $about["about"]; ?></textarea><br>
+                <dd><textarea name="about" cols="25" rows="5"><?php print $about["about"]; ?></textarea><br />
                     </dd><br />
                 <dt>Birth day</dt>
                 <dd><input name="birth_month" type="text" value="<?php print $about["birth_month"] ?>">/<input type="text" name="birth_day" value="<?php print $about["birth_day"] ?>">/<input type="text"  name="birth_year" value="<?php print $about["birth_year"]; ?>"></dd>

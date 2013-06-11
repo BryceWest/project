@@ -42,15 +42,48 @@ switch ( $_GET["a"] ) {
         include( APP_VIEW ."/home/profileView.php" );
         break;
 
+    case "privEdit":
+        $privacy = list_privacy();
+        $content = list_comment();
+        $about = list_about();
+        include( APP_VIEW ."/home/privEditSubNav.php" );
+        include( APP_VIEW ."/home/profileView.php" );
+        break;
+
+
     case "proPush":
 
         $about = $_POST["about"];
         $birth_day = $_POST["birth_day"];
         $birth_year = $_POST["birth_year"];
         $birth_month = $_POST["birth_month"];
+        $proPic = $_POST["proPic"];
+
+        update_about($about,$birth_day,$birth_year,$birth_month,$proPic);
+        $privacy = list_privacy();
+        $content = list_comment();
+        $about = list_about();
+        include( APP_VIEW ."/home/profileSubNav.php" );
+        include( APP_VIEW ."/home/profileView.php" );
+        break;
+
+    default:
+        $privacy = list_privacy();
+        $content = list_comment();
+        include( APP_VIEW ."/home/homeSubNav.php" );
+        include( APP_VIEW ."/home/homeView.php" );
+        break;
 
 
-        update_about($about,$birth_day,$birth_year,$birth_month);
+    case "privPush":
+
+        $priv1 = $_POST["priv1"];
+        $priv2 = $_POST["priv2"];
+        $priv3 = $_POST["priv3"];
+        $priv4 = $_POST["priv4"];
+        $priv5 = $_POST["priv5"];
+
+        update_privacy($priv1,$priv2,$priv3,$priv4,$priv5);
         $privacy = list_privacy();
         $content = list_comment();
         $about = list_about();

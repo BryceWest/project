@@ -8,7 +8,7 @@
 
 
             <ul class="nav pull-right">
-              <li id="fat-menu" class="dropdown">
+              <li id="fat-menu" class="dropdown row">
                 <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
 <?php
                     foreach ( $privacy as $key => $item ) {
@@ -41,7 +41,7 @@
                     }
 ?>
                   <b class="caret"></b>
-                </a>
+                </a><a href="index.php?q=home&a=privEdit" class="btn">Edit Privacy Names</a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
 <?php
         foreach ( $privacy as $key => $item ) { ?>
@@ -66,7 +66,13 @@
     </div><!--/.well -->
 
         <div class="well">
+
+
+
+
+
             <dl>
+                <dt><img class="span12" src="<?php print "pics/".$about["name"] ?>" /></dt>
                 <dt>About</dt>
                 <dd><?php print $about["about"]; ?></dd><br />
                 <dt>Birth day</dt>
