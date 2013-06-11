@@ -43,15 +43,19 @@
            </div>
 
 
-
-         <ul class="nav">
-           <li><a href="index.php">Home</a></li>
-           <li class="offset4" index="-1"> <form>
-                    Search for friends <input type="text" id="search" onkeyup="showHint(this.value)" />
+<?php
+                  print (!empty($_SESSION["username"]) ?
+         "<ul class='nav'>
+           <li><a href='index.php'>Home</a></li>
+           <li class='offset4' index='-1'> <form>
+                    Search for friends <input type='text' id='search' onkeyup='showHint(this.value)'' />
                 </form>
-                <p><span id="friendDisplay"></span></p>
+                <p><span id='friendDisplay'></span></p>
            </li>
-         </ul>
+         </ul>"
+:"");
+?>
+
        </div><!--/.nav-collapse -->
     </div>
    </div>
