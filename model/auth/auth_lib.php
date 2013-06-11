@@ -73,16 +73,24 @@ function newUser($email, $fName, $lName, $user, $user2, $pass, $pass2) {
     if ($newUser["return"] == true) {
 
         $sql = "INSERT INTO auth_user
-             ( fName, lName, username, password, email )
+             ( fName, lName, username, password, email, picture, privacy1, privacy2, privacy3, privacy4, privacy5 )
             VALUES
              ( '" . $fName             . "',
                '" . $lName             . "',
                '" . $user              . "',
                '" . md5($pass)         . "',
-               '" . $email             . "'
+               '" . $email             . "',
+               '1',
+               'Group 1',
+               'Group 2',
+               'Group 3',
+               'Group 4',
+               'Group 5'
                 )";
 
             mysql_query( $sql );
+
+
 
 
     $sql = "SELECT id
