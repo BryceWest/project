@@ -8,7 +8,7 @@
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="brand" href="#">Project name</a>
+         <a class="brand" href="index.php">FTL Networking</a>
          <div class="nav-collapse collapse">
 
 

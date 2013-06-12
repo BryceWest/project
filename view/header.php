@@ -10,6 +10,6 @@
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
     <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="<?php print APP_JSCRIPT . "/application.js"; ?>"></script>
-    <title>My Project</title />
+    <title>FTL Networking</title />
   </head>
   <body>
